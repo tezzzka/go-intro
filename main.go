@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"github.com/tezzzka/go-intro/homework1"
+)
 
 func main() {
-	retun 0
+	homework1.Calc()
+	homework1.Ma()
 }
