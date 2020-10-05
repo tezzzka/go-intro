@@ -23,24 +23,14 @@ func Del(a int) bool {
 	return false
 }
 
-//Ф.Фибоначчи
-func Fibonacci() func() int {
-	x, y := 0, 1
-	return func() int {
-		x, y = y, x+y
-		return x
+func Fibonacci(N int) {
+	f0 := 0
+	f1 := 1
+	fmt.Print(f0, " ", f1, " ")
+	for i := 2; i <= N; i++ {
+		fmt.Print(f0+f1, " ")
+		tmp := f0
+		f0 = f1
+		f1 = tmp + f1
 	}
-}
-
-//Ф.Обертка для Фибоначчи-ф
-func FibonacciWrapper(N int) {
-	f := Fibonacci()
-	//Например, добавим срез и будем туда пушить фибо-элементы. Например, чтобы передавать результат этой ф. в целом в другую ф.
-	var intSlice []int
-	for i := 0; i <= N; i++ {
-		fmt.Print(f(), " ")
-		intSlice = append(intSlice, f())
-	}
-	//Можно так сразу вывести срез
-	//fmt.Println("***\n", intSlice)
 }

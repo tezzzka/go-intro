@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	hm "github.com/tezzzka/go-intro/homework2"
+	hm "github/tezzzka/go-intro/homework2"
 )
 
 func main() {
@@ -16,7 +16,6 @@ func main() {
 	fmt.Println("Чет/нечет true/false: ", X)
 	fmt.Println("Деление на 3 true/false: ", Y)
 
-	//hm.Fib(100)
-	hm.FibonacciWrapper(20)
+	hm.Fibonacci(100)
 
 }
