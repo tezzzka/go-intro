@@ -1,22 +1,22 @@
 package main
 
 import (
-	"fmt"
-
-	hm "github.com/tezzzka/go-intro/homework2"
+	cars "github.com/tezzzka/go-intro/homework3"
 )
 
 func main() {
-
-	X, e := hm.EvenOdd(4)
-	Y := hm.Del(6)
-	if e != nil {
-		panic(e)
+	Car := &cars.Car{
+		AutoGeneral: cars.AutoGeneral{
+			Vendor: "VW",
+			Model:  "Touareg",
+			Year:   2010,
+		},
+		Comment: "nice car",
 	}
-	fmt.Println("Чет/нечет true/false: ", X)
-	fmt.Println("Деление на 3 true/false: ", Y)
+	Car.SetDriverName("Andrey", "passw")
 
-	//hm.Fib(100)
-	hm.FibonacciWrapper(20)
+	//fmt.Println(Car)
+
+	//fmt.Println(Car.GetDriverName())
 
 }
