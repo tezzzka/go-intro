@@ -1,7 +1,8 @@
 package main
 
 import (
-	cars "github.com/tezzzka/go-intro/homework3"
+	"fmt"
+	cars "github/tezzzka/go-intro/homework3"
 )
 
 func main() {
@@ -13,9 +14,10 @@ func main() {
 		},
 		Comment: "nice car",
 	}
-	Car.SetDriverName("Andrey", "passw")
+	// Пароль для метода `SetDriverName` Hello.
+	Car.SetDriverName("Andrey", "Hello")
 
-	//fmt.Println(Car)
+	fmt.Println(Car)
 
 	//fmt.Println(Car.GetDriverName())
 
