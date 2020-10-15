@@ -20,7 +20,11 @@ type userSec struct {
 	secret   string
 }
 
-type AddressBook struct {
-	User
-	cell map[int16]*int64
+/*#2*/
+
+type Contact struct {
+	Name string
+	Cell int16
 }
+
+type Contacts [10]Contact

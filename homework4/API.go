@@ -7,6 +7,11 @@ type AccountStorage interface {
 	NewUser(*abstract.User) error
 	SetPasswd(id int64, passwd string) error
 	ResetPasswd(id int64, newpasswd string, root string) error
+
 	// RemoveUser(id int64, root string) error
 	// SetACL(rules string, root string) error
+}
+
+type ContactsStorage interface {
+	GetByNum(Num int16) (*abstract.Contact, error)
 }

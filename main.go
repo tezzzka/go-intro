@@ -54,4 +54,6 @@ func main() {
 	service.ResetPasswd(1, "PA$$W0RD", "Hello")
 	fmt.Println(service.GetByID(1))
 
+	/*#2*/
+
 }
