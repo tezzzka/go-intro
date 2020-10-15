@@ -10,19 +10,16 @@ import (
 type Acc struct {
 	accounts map[int64]*User
 }
-
 func Init() *Acc {
 	return &Acc{
 		accounts: make(map[int64]*User),
 	}
 }
-
 func (a *Acc) NewUser(u *User) error {
 	a.accounts[u.ID] = u
 
 	return nil
 }
-
 func (a *Acc) GetByID(id int64) (*User, error) {
 	user, ok := a.accounts[id]
 	if !ok {
@@ -30,13 +27,11 @@ func (a *Acc) GetByID(id int64) (*User, error) {
 	}
 	return user, nil
 }
-
 func (a *Acc) SetPasswd(id int64, passwd string) error {
 	(a.accounts[id]).Passwd = passwd
 
 	return nil
 }
-
 func (a *Acc) ResetPasswd(id int64, newpasswd string, root string) error {
 
 	type pw struct {
@@ -63,3 +58,27 @@ func (a *Acc) ResetPasswd(id int64, newpasswd string, root string) error {
 
 	return nil
 }
+
+/* #2 */
+
+type cn struct {
+	contacts *Contacts
+}
+
+
+
+func CNInit() *cn {
+	return &cn.contacts[0] {
+		Name: "tezzzka",
+		Cell: 9320909555,
+
+	}
+}
+
+// func (a *Contacts) Add(Name string, Cell int16) {
+// 	anew := Contact{
+// 		Name: Name,
+// 		Cell: Cell,
+// 	}
+// 	*a = append(*a, anew)
+// }
