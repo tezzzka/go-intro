@@ -10,6 +10,7 @@ import (
 type Acc struct {
 	accounts map[int64]*User
 }
+
 func Init() *Acc {
 	return &Acc{
 		accounts: make(map[int64]*User),
@@ -61,24 +62,21 @@ func (a *Acc) ResetPasswd(id int64, newpasswd string, root string) error {
 
 /* #2 */
 
-type cn struct {
-	contacts *Contacts
-}
-
-
-
-func CNInit() *cn {
-	return &cn.contacts[0] {
-		Name: "tezzzka",
-		Cell: 9320909555,
-
+func CNInit() *SuperContacts {
+	return &SuperContacts{
+		[]*Contact{
+			{"test", 1},
+			{"test2", 1},
+		},
+		"supercontext",
 	}
 }
 
-// func (a *Contacts) Add(Name string, Cell int16) {
-// 	anew := Contact{
-// 		Name: Name,
-// 		Cell: Cell,
-// 	}
-// 	*a = append(*a, anew)
-// }
+func SimpleInitContacts() *Contacts {
+	return &Contacts{
+		{"test", 10},
+		{"tzk", 2},
+		{"test", 31},
+		{"Action", 0},
+	}
+}

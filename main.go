@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"sort"
 
 	"github.com/tezzzka/go-intro/homework4"
 	"github.com/tezzzka/go-intro/homework4/abstract"
+	"github.com/tezzzka/go-intro/homework4/calculator"
 )
 
 type userService struct {
@@ -52,8 +54,50 @@ func main() {
 	}
 
 	service.ResetPasswd(1, "PA$$W0RD", "Hello")
-	fmt.Println(service.GetByID(1))
+	//fmt.Println(service.GetByID(1))
 
 	/*#2*/
+	// X := abstract.SimpleInitContacts()
+	// fmt.Print(&X.[])
+	// sort.Slice(X, func(i, j int) bool {
+	// 	return X[i].Cell < X[j].Cell
+	// })
+	// fmt.Println(abstract.SimpleInitContacts())
+
+	group := []struct {
+		name string
+		age  int
+	}{
+		{"Gold", 14}, {"dave", 18}, {"kane", 12}, {"rain", 34},
+	}
+
+	sort.Slice(group, func(i, j int) bool {
+		return group[i].age < group[j].age
+	})
+	// fmt.Println(group)
+
+	// #3
+	input := ""
+	for {
+		fmt.Print("> ")
+		if _, err := fmt.Scanln(&input); err != nil {
+			fmt.Println(err)
+			continue
+		}
+
+		if input == "exit" {
+			break
+		}
+		if input == "help" {
+			fmt.Println("This is manual page.")
+		} else {
+			if res, err := calculator.Calculate(input); err == nil {
+				fmt.Printf("Результат: %v\n", res)
+			} else {
+				fmt.Println("Не удалось произвести вычисление")
+			}
+		}
+
+	}
 
 }

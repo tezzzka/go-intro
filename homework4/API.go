@@ -12,6 +12,6 @@ type AccountStorage interface {
 	// SetACL(rules string, root string) error
 }
 
-type ContactsStorage interface {
-	GetByNum(Num int16) (*abstract.Contact, error)
-}
+// type CNStorage interface {
+// 	Sort(Num int16) (*abstract.Contact, error)
+// }

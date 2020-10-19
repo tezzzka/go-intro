@@ -24,7 +24,12 @@ type userSec struct {
 
 type Contact struct {
 	Name string
-	Cell int16
+	Cell int64
 }
 
-type Contacts [10]Contact
+type Contacts []Contact
+
+type SuperContacts struct {
+	contacts []*Contact
+	desc     string
+}
